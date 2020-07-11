@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns="http://www.springframework.org/schema/beans" 
+	xmlns:aop="http://www.springframework.org/schema/aop" 
+	xmlns:context="http://www.springframework.org/schema/context" 
+	xmlns:mvc="http://www.springframework.org/schema/mvc" 
+	xmlns:tx="http://www.springframework.org/schema/tx" 
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd 
+	http://www.springframework.org/schema/aop 
+	http://www.springframework.org/schema/aop/spring-aop.xsd 
+	http://www.springframework.org/schema/context 
+	http://www.springframework.org/schema/context/spring-context.xsd 
+	http://www.springframework.org/schema/mvc 
+	http://www.springframework.org/schema/mvc/spring-mvc.xsd 
+	http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx/spring-tx.xsd ">
+	
+	<!-- 扫描组件 -->
+   <context:component-scan base-package="com.maternalBabyManage"/>
+   <!-- 加载数据库属性文件 -->
+   <context:property-placeholder location="classpath:database.properties"/> 
+   
+   <bean name="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
+     <property name="driverClassName" value="${database.mysql.driver}"></property>
+     <property name="url" value="${database.mysql.url}"></property>
+     <property name="username" value="${database.mysql.username}"></property>
+     <property name="password" value="${database.mysql.password}"></property>
+   </bean>
+   
+   <bean name="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+     <property name="dataSource" ref="dataSource"></property>
+     <property name="configLocation" value="classpath:mybatis-config.xml"></property>
+   </bean>
+   
+   <!-- 将Mapper接口生成代理注入到Spring -->
+   <bean name="mapperScanner" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+    <property name="basePackage" value="com.maternalBabyManage.dao"/>
+    <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
+   </bean>
+
+   <!-- 事务注解驱动 -->
+   <tx:annotation-driven/>
+
+</beans>

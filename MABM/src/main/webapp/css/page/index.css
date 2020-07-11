@@ -1,0 +1,113 @@
+@charset "UTF-8";
+.container{
+	width:1200px;
+	margin:0 auto;
+	margin-top:5px;
+}
+.container .header{
+	width:100%;
+	height:74px;
+	background-color:#486483;
+	border-radius:3px;
+}
+
+.container .header .header-logo{
+    width: 74px;
+    height: 67px;
+    margin-top: 5px;
+    margin-left: 15px;
+    float: left;
+}
+.container .header .header-title{
+	width:630px;
+	height:100%;
+	float:left;
+	margin-left:15px;
+}
+.container .header .header-title .header-title-text{
+	color:white;
+	font-size:30px;
+	line-height:72px;
+	padding-left:5px;
+}
+.container .header .header-title .header-title-english{
+    color: white;
+    font-size: 18px;
+    position: relative;
+    bottom: -16px;
+    left: 10px;
+    padding-left:10px; 
+}
+.container .header .header-user{
+	width:460px;
+	height:100%;
+	float:right;
+	margin-right:5px;
+}
+.container .header .header-user li a{ 
+	float: left;
+    line-height: 74px;
+    color: white;
+    font-size: 18px;
+    padding-left: 15px;
+    margin-left: -20px;
+    overflow:hidden;
+}
+.container .header .header-user .layui-nav{
+	background-color:#486483;
+	height:100%;
+	float:left;
+}
+.container .header .header-user .layui-nav li a:hover,#timeSheets a:hover{
+	color:#5FB878;
+}
+.project-introduce p{
+	font-family: 'Glyphicons Halflings';
+	font-style: normal;
+	color: #666;
+	line-height: 22px;
+    font-size: 14px;
+}
+.container .nav {
+	margin-top:3px;
+	float:left;
+}
+#form-user-search{
+	display:block
+}
+#form-user-search a:hover,.smile:hover{
+	color:#5FB878;
+}
+.container .nav .layui-bg{
+	background-color:#486483;
+}
+.container .content .content-center .layui-carousel{
+	margin-top:3px;
+	float:left;
+}
+.container .content .content-right{
+	margin-top:3px;
+	float:left;
+	width:30%
+}
+.layui-card-header{
+	padding-left:30px;
+}
+.container .content-bottom{
+	width:98%;
+	height:395px;
+	margin-top:8px;
+	border:1px solid #F0F0F0;
+	border-radius:3px;
+	float:left;
+}
+.container .footer{
+	width:100%;
+	height:64px;
+	float:left;
+	margin-top:5px;
+	text-align:center;
+	line-height:32px;
+	background-color:#F0F0F0;
+	border-radius:3px;
+}

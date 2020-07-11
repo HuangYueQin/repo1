@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.4.6//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.maternalBabyManage.dao.UserDao">
+   <resultMap type="com.maternalBabyManage.domain.User" id="usermap">
+     <id property="userId" column="userId"/>
+     <result property="name" column="username"/>
+     <result property="password" column="password"/>
+     <result property="name" column="username"/>
+     <result property="birthday" column="birthday"/>
+     <result property="sex" column="sex"/>
+     <result property="telphone" column="telphone"/>
+     <result property="userFrom" column="userFrom"/>
+     <result property="requestInfo" column="requestInfo"/>
+     <result property="requestDate" column="requestDate"/>
+     <result property="childbirthDate" column="childbirthDate"/>
+     <collection property="babysitterlist" column="username"
+       select ="com.maternalBabyManage.dao.BabysitterDao.selectBabysitterByUsername"/>
+   </resultMap>
+  <select id="selectUserByName" parameterType="string" resultMap="usermap">
+      select * from user where binary username = #{userName }
+  </select>
+  <select id="selectUserById" parameterType="int" resultMap="usermap">
+      select * from user where userId = #{id}
+  </select>
+  <select id="selectUserList" resultMap="usermap">
+      select * from user limit #{arg0},#{arg1};
+  </select>
+  <select id="selectUserCount" resultType="int">
+      select count(*) from user;
+  </select>
+  <select id="selectUserByBabysitterName" parameterType="string" resultMap="usermap">
+      select * from user u,babysitter b
+       where u.username = b.customer and u.babysitter = #{babysitterName}
+  </select>
+  <insert id="addUser" parameterType="com.maternalBabyManage.domain.User">
+      insert into user(username,password,birthday,sex,telphone,userFrom)
+       values(
+          #{name},
+          #{password},
+          #{birthday},
+          #{sex},
+          #{telphone},
+          #{userFrom}
+       )
+  </insert>
+  <update id="updateUser">   <!-- 更新所有 -->
+        update user
+        set 
+            telphone = #{arg0.telphone},
+            userFrom = #{arg0.userFrom},
+            babysitter =#{arg1},           
+            requestInfo = #{arg0.requestInfo},
+            requestDate = #{arg0.requestDate},
+            childbirthDate = #{arg0.childbirthDate}
+        where username = #{arg0.name}
+  </update>
+
+  <delete id="deleteUserByName" parameterType="String">
+        delete from user
+        where username = #{name}
+  </delete>
+  
+  <delete id="deleteUserById" parameterType="int">
+        delete from user
+        where userId = #{userId}
+  </delete>
+</mapper>

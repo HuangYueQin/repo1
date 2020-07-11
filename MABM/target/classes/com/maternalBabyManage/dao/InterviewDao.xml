@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.4.6//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.maternalBabyManage.dao.InterviewDao"> <!-- 当domain作用域对象与数据库表字段名称一致时,不需要添加resultMap -->
+
+ <select id="selectInterviewListCount" resultType="int">
+   select count(*) from interview;
+ </select>
+ <select id="selectInterviewById" parameterType="int" resultType="com.maternalBabyManage.domain.Interview">
+   select * from interview where id = #{id}
+ </select>
+ <select id="selectInterviewList" resultType = "com.maternalBabyManage.domain.Interview">
+    select * from interview limit #{arg0},#{arg1}
+ </select>
+ <insert id="addInterview">
+    insert into interview(username,recepteName,interviewClassify,
+            interviewAddress,interviewInfo,interviewDate)
+    values(
+       #{username},
+       #{recepteName},
+       #{interviewClassify},
+       #{interviewAddress},
+       #{interviewInfo},
+       #{interviewDate}
+    )
+ </insert>
+ 
+ <delete id="deleteInterviewById">
+   delete from interview where id = #{id}
+ </delete>
+ 
+ <update id="updateInterview" parameterType="com.maternalBabyManage.domain.Interview">
+     update interview
+     set interviewClassify = #{interviewClassify},
+         interviewAddress = #{interviewAddress},
+         interviewInfo = #{interviewInfo},
+         interviewDate = #{interviewDate}
+     where id = #{id}
+ </update>
+</mapper>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.4.6//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.maternalBabyManage.dao.ContractDao">
+   <resultMap type="com.maternalBabyManage.domain.Contract" id="contractMap">
+      <id  property="id" column="contractId"/>
+      <result property="customerName" column="customerName"/>
+     <result property="babysitterName" column="babysitterName"/>
+     <result property="customerTel" column="customerTelphone"/>
+     <result property="babysitterTel" column="babysitterTelphone"/>
+     <result property="info" column="contractInfo"/>
+     <result property="level" column="contractLevel"/>
+     <result property="contractTime" column="contractTime"/>
+     <result property="childBirthday" column="childBirthday"/>
+     <result property="serviceTime" column="contractServiceTime"/>
+     <result property="amount" column="contractAmount"/>
+   </resultMap>
+   
+   <select id="selectContractById" parameterType ="int" resultMap = "contractMap">
+        select * from contract c where c.contractId = #{contractId}
+   </select>
+   <select id="selectContract" resultMap="contractMap">
+        select * from contract c where c.customerName = #{arg0} and c.babysitterName = #{arg1}
+   </select>
+    <select id="selectContractByCustomerName" parameterType ="string" resultMap = "contractMap">
+        select * from contract c where c.customerName = #{customerName}
+   </select>
+   <select id="selectContractByBabysitterName" parameterType ="string" resultMap = "contractMap">
+        select * from contract c where c.babysitterName = #{babysitterName}
+   </select>
+   <select id="selectContractList" resultMap = "contractMap">
+      select * from contract limit #{arg0},#{arg1}
+   </select>
+   <select id="selectContractCount" resultType = "int">
+      select count(*) from contract;
+   </select>
+   <insert id="addContract" parameterType="com.maternalBabyManage.domain.Contract">
+        insert into contract(customerName,babysitterName,customerTelphone,babysitterTelphone,
+        contractInfo,contractLevel,contractTime,childBirthday,contractServiceTime,contractAmount)
+         values(
+          #{customerName},
+          #{babysitterName},
+          #{customerTel},
+          #{babysitterTel},
+          #{info},
+          #{level},
+          #{contractTime},
+          #{childBirthday},
+          #{serviceTime},
+          #{amount}
+        );
+   </insert>
+   <update id="updateContract" parameterType="com.maternalBabyManage.domain.Contract">
+        update contract 
+        set
+        babysitterName = #{babysitterName},
+        customerTelphone = #{customerTel},
+        contractInfo = #{info},
+        contractLevel = #{level},
+        contractTime = #{contractTime},
+        childBirthday = #{childBirthday},
+        contractServiceTime = #{serviceTime},
+        contractAmount = #{amount}
+        where contractId = #{id}
+   </update>
+   <delete id="deleteContract" parameterType="int">
+      delete from contract where contractId = #{contractId}
+   </delete>
+</mapper>

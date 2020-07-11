@@ -1,0 +1,31 @@
+@charset "UTF-8";
+.content{
+	width:690px;
+	height:300px;
+	margin:0 auto;
+	margin-top:50px;
+	border-radius:10px;
+}
+.content .return{
+	width: 356px;
+    height: 100px;
+    float: right;
+    font-size: 40px;
+    margin-right: 50px;
+    line-height: 150px;
+    margin:0 auto;
+}
+.content img{
+	margin-left:110px;
+}
+.content .return span{
+	color:blue;
+}
+.content .return a{
+	float: right;
+    margin-top: 15px;
+    font-size: 17px;
+    margin-right: 10px;
+    color: blue;
+    text-decoration: underline;
+}

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.4.6//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace = "com.maternalBabyManage.dao.BabysitterDao">
+<resultMap type="com.maternalBabyManage.domain.Babysitter" id="babysitterMap">
+ <id property="babysitterId" column="babysitterId"/>
+ <result property="babysitterName" column="babysitterName"/>
+ <result property="password" column="password"/>
+ <result property="sex" column="sex"/>
+ <result property="telphone" column="telphone"/>
+ <result property="babysitterFrom" column="babysitterFrom"/>
+ <result property="isMarital" column="isMarital"/>
+ <result property="education" column="education"/>
+ <result property="workInfo" column="workInfo"/>
+ <result property="age" column="age"/>
+ <result property="recomend" column="recomend"/>
+ <result property="workTime" column="workTime"/>
+ <result property="photoSrc" column="photoSrc"/>
+  <result property="constellation" column="constellation"/>
+  <result property="level" column="level"/>
+  <result property="certificate" column="certificate"/>
+  <result property="userlist" column="customer"/>
+</resultMap>
+
+ <select id="selectBabysitterByName" parameterType="string" resultMap = "babysitterMap">
+    select * from babysitter b  where binary b.babysitterName = #{babysitterName}
+ </select>
+ 
+ <select id="selectBabysitterById" parameterType="int" resultMap = "babysitterMap">
+ 
+    select * from babysitter b where b.babysitterId = #{id}
+ </select>
+ 
+ <select id="selectBabysitterlist" resultMap = "babysitterMap">
+    select * from babysitter limit #{arg0},#{arg1};
+ </select>
+ <select id="selectBabysitterResume" resultMap = "babysitterMap">
+   select * from babysitter ;
+ </select>
+ 
+ <select id="getBabysitterCount" resultType="int">
+      select count(*) from babysitter;
+  </select>
+ 
+ <select id="selectBabysitterByUsername" parameterType="string" resultMap = "babysitterMap">
+    select * from babysitter b
+     where b.customer = #{username}
+ </select>
+ <insert id="addBabysitter" parameterType="com.maternalBabyManage.domain.Babysitter">
+      insert into babysitter(babysitterName,password,sex,telphone,babysitterFrom,age,
+          workInfo,isMarital,education,constellation,level,workTime,certificate)
+       values(
+          #{babysitterName},
+          #{password},
+          #{sex},
+          #{telphone},
+          #{babysitterFrom},
+          #{age},
+          #{workInfo},
+          #{isMarital},
+          #{education},
+          #{constellation},
+          #{level},
+          #{workTime},
+          #{certificate}
+       )
+  </insert>
+  <update id="updateBabysitter" parameterType="com.maternalBabyManage.domain.Babysitter">
+        update babysitter
+        set 
+            telphone = #{telphone},
+            babysitterFrom = #{babysitterFrom},
+            workInfo = #{workInfo},
+            education = #{education},
+            age = #{age},
+            recomend = #{recomend},
+            constellation = #{constellation},
+            certificate = #{certificate},
+            customer = #{userlist}
+        where babysitterName = #{babysitterName}
+  </update>
+ 
+  <delete id="deleteBabysitterByName" parameterType="string">
+        delete from babysitter
+        where binary babysitterName = #{babysitterName}
+  </delete>
+  
+  <delete id="deleteBabysitterById" parameterType="int">
+        delete from babysitter
+        where babysitterId = #{babysitterId}
+  </delete>
+</mapper>

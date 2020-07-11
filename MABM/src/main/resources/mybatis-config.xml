@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.4.6//EN" "mybatis-3-config.dtd" >
+<configuration>
+  <settings>
+	  <!-- 设置启用缓存 -->
+      <setting name="cacheEnabled" value="true"/>
+         <!-- 允许JDBC支持生成的键 -->
+      <setting name="useGeneratedKeys" value="true"/>
+         <!-- 设置默认的执行器（SIMPLE,REUSE,BATCH）simple没有特别之处，reuse执行重用预处理，batch重用语句和批量更新 -->
+      <setting name="defaultExecutorType" value="REUSE"/>
+         <!-- 设置超时时间 -->
+      <setting name="defaultStatementTimeout" value="25000"/>
+  </settings>
+  <mappers>
+    <package name="com.maternalBabyManage.dao"/>
+  </mappers>
+</configuration>

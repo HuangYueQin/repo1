@@ -1,0 +1,43 @@
+@charset "UTF-8";
+.container{
+	width:1000px;
+	margin:0 auto;
+	margin-top:10px;
+}
+.container .content{
+	width:98%; 
+	margin-left:40px;  
+}
+.layui-form-item .layui-input-inline {
+    float: left;
+    width: 300px;
+    margin-right: 10px; 
+}
+#reset{
+  margin-left:50px; 
+  width: 92px;	
+}
+#vertification{
+	float:left;
+	height:38px;
+	width:180px;
+}
+.layui-form-item {
+    margin-bottom: 20px;
+}
+.layui-form-label {
+    width: 86px;
+    text-align: left;
+}
+.container .return {
+	position: absolute;
+    right: 40px;
+    top: 20px;
+}
+.container .return a{
+	text-decoration:underline;
+	color:green;
+}
+.container .return a:hover{
+	color:#5FB878;
+}

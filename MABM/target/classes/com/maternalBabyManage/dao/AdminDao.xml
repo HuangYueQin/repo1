@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.4.6//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.maternalBabyManage.dao.AdminDao">
+ <resultMap type="com.maternalBabyManage.domain.Admin" id="adminMap">
+    <id property = "id" column = "id"/>
+    <result property = "name" column="name"/>
+    <result property = "password" column="password"/>
+    <result property = "age" column="age"/>
+    <result property = "telphone" column="telphone"/>
+    <result property = "sex" column="sex"/>
+    <result property = "birthday" column="birthday"/>
+ </resultMap>
+
+  <select id="selectAdminByName" parameterType = "string" resultMap = "adminMap">
+     select * from admin a where a.name = #{name}
+  </select>
+  <select id="selectAdminById" parameterType = "int" resultMap = "adminMap">
+     select * from admin a where a.id = #{id}
+  </select>
+
+
+
+
+</mapper>

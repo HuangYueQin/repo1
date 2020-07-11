@@ -1,0 +1,22 @@
+@charset "UTF-8";
+.layui-form-item .layui-input-inline {
+	    width: 270px;
+	    margin-bottom: 10px;
+}
+.layui-form-item {
+	 margin-left: 25px;
+}
+form{
+	margin-top:25px;
+	margin-bottom:100px;
+}
+.layui-form-label{
+	width:100px;
+}
+#buttonGroup{
+  float:right;
+  margin-right:30px; 
+}
+#reset{
+	margin-left:30px;
+}

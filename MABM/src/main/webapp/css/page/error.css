@@ -1,0 +1,27 @@
+@charset "UTF-8";
+.content{
+	width:690px;
+	height:300px;
+	margin:0 auto;
+	margin-top:50px;
+	background-color:#EDEDEF;
+	border-radius:10px;
+}
+.content .return{
+	width: 380px;
+    height: 100px;
+    float: right;
+    font-size: 20px;
+    margin-right:76px;
+}
+.content .return span{
+	color:red;
+}
+.content .return a{
+	float: right;
+    margin-top: 15px;
+    font-size: 17px;
+    margin-right: 10px;
+    color: blue;
+    text-decoration: underline;
+}

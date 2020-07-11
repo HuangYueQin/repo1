@@ -1,0 +1,72 @@
+@charset "UTF-8";
+.container{
+	width:100%;
+	margin:0 auto;
+	margin-top:5px; 
+}
+.container .header{
+	width:100%;
+	height:74px;
+	border-radius:3px;
+}
+.container .header .header-title{
+	margin-top:7px;
+	width:300px;
+	height:100%;
+	float:left;
+}
+.container .header .header-logo{
+	width: 74px;
+    height: 67px;
+    margin-top: 5px;
+    margin-left: 25px;
+    float: left;
+}
+.container .center{
+	margin-top:5px;
+	width:100%;
+	height:625px; 
+	background:url("../../img/loginbg.jpg");
+	float:left; 
+	
+}
+.container .center .center-form{
+	width: 340px;
+    height: 400px;
+    float: right;
+    margin-right: 5px; 
+    margin-top:-50px;
+    border-radius:10px;
+}
+.container .center .center-form .layui-card-header{
+	background-color:#97BCD9;
+	border-top-left-radius:10px;
+	border-top-right-radius:10px;
+}
+#vertification{
+	width:230px;
+	height:50px;
+	margin-left:110px;
+	
+}
+#login-button{
+	margin-top:25px; 
+}
+
+#login-button input{
+	border-radius:5px;
+	width: 100px;
+}
+#reset{
+	margin-left:20px;
+}
+.container .footer{
+	width:100%;
+	height:64px;
+	float:left;
+	margin-top:5px;
+	text-align:center;
+	line-height:32px;
+	background-color:#F0F0F0;
+	border-radius:3px;
+}

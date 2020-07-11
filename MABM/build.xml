@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="MABM">
+    <property environment="env"/>
+    <property name="ECLIPSE_HOME" value="../../Eclipse/eclipse/"/>
+    <property name="junit.output.dir" value="junit"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.5"/>
+    <property name="source" value="1.5"/>
+    <path id="Maven Dependencies.libraryclasspath">
+        <pathelement location="C:/Users/asus/.m2/repository/junit/junit/3.8.1/junit-3.8.1.jar"/>
+        <pathelement location="C:/Users/asus/.m2/repository/org/springframework/spring-beans/5.1.6.RELEASE/spring-beans-5.1.6.RELEASE.jar"/>
+        <pathelement location="C:/Users/asus/.m2/repository/org/springframework/spring-core/5.1.6.RELEASE/spring-core-5.1.6.RELEASE.jar"/>
+        <pathelement location="C:/Users/asus/.m2/repository/org/springframework/spring-jcl/5.1.6.RELEASE/spring-jcl-5.1.6.RELEASE.jar"/>
+        <pathelement location="C:/Users/asus/.m2/repository/org/springframework/spring-context/5.1.6.RELEASE/spring-context-5.1.6.RELEASE.jar"/>
+        <pathelement location="C:/Users/asus/.m2/repository/org/springframework/spring-web/5.1.6.RELEASE/spring-web-5.1.6.RELEASE.jar"/>
+        <pathelement location="C:/Users/asus/.m2/repository/org/springframework/spring-webmvc/5.1.6.RELEASE/spring-webmvc-5.1.6.RELEASE.jar"/>
+        <pathelement location="C:/Users/asus/.m2/repository/org/springframework/spring-aop/5.1.6.RELEASE/spring-aop-5.1.6.RELEASE.jar"/>
+        <pathelement location="C:/Users/asus/.m2/repository/org/springframework/spring-test/5.1.6.RELEASE/spring-test-5.1.6.RELEASE.jar"/>
+        <pathelement location="C:/Users/asus/.m2/repository/org/springframework/spring-expression/5.1.6.RELEASE/spring-expression-5.1.6.RELEASE.jar"/>
+        <pathelement location="C:/Users/asus/.m2/repository/org/springframework/spring-tx/5.1.6.RELEASE/spring-tx-5.1.6.RELEASE.jar"/>
+        <pathelement location="C:/Users/asus/.m2/repository/org/springframework/spring-jdbc/5.1.6.RELEASE/spring-jdbc-5.1.6.RELEASE.jar"/>
+        <pathelement location="C:/Users/asus/.m2/repository/org/apache/logging/log4j/log4j-core/2.11.2/log4j-core-2.11.2.jar"/>
+        <pathelement location="C:/Users/asus/.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar"/>
+        <pathelement location="C:/Users/asus/.m2/repository/org/apache/logging/log4j/log4j-api/2.11.2/log4j-api-2.11.2.jar"/>
+        <pathelement location="C:/Users/asus/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar"/>
+        <pathelement location="C:/Users/asus/.m2/repository/org/apache/commons/commons-lang3/3.8.1/commons-lang3-3.8.1.jar"/>
+        <pathelement location="C:/Users/asus/.m2/repository/org/mybatis/mybatis-spring/2.0.1/mybatis-spring-2.0.1.jar"/>
+        <pathelement location="C:/Users/asus/.m2/repository/mysql/mysql-connector-java/8.0.15/mysql-connector-java-8.0.15.jar"/>
+        <pathelement location="C:/Users/asus/.m2/repository/com/google/protobuf/protobuf-java/3.6.1/protobuf-java-3.6.1.jar"/>
+        <pathelement location="C:/Users/asus/.m2/repository/org/aspectj/aspectjweaver/1.9.3/aspectjweaver-1.9.3.jar"/>
+        <pathelement location="C:/Users/asus/.m2/repository/org/aspectj/aspectjrt/1.9.3/aspectjrt-1.9.3.jar"/>
+        <pathelement location="C:/Users/asus/.m2/repository/commons-io/commons-io/2.6/commons-io-2.6.jar"/>
+        <pathelement location="C:/Users/asus/.m2/repository/org/mybatis/mybatis/3.5.1/mybatis-3.5.1.jar"/>
+        <pathelement location="C:/Users/asus/.m2/repository/org/apache/commons/commons-dbcp2/2.6.0/commons-dbcp2-2.6.0.jar"/>
+        <pathelement location="C:/Users/asus/.m2/repository/org/apache/commons/commons-pool2/2.6.1/commons-pool2-2.6.1.jar"/>
+        <pathelement location="C:/Users/asus/.m2/repository/org/tuckey/urlrewritefilter/4.0.3/urlrewritefilter-4.0.3.jar"/>
+        <pathelement location="C:/Users/asus/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.9.8/jackson-databind-2.9.8.jar"/>
+        <pathelement location="C:/Users/asus/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.9.8/jackson-core-2.9.8.jar"/>
+        <pathelement location="C:/Users/asus/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.9.8/jackson-annotations-2.9.8.jar"/>
+        <pathelement location="C:/Users/asus/.m2/repository/javax/servlet/jsp/jstl/jstl-api/1.2/jstl-api-1.2.jar"/>
+        <pathelement location="C:/Users/asus/.m2/repository/javax/servlet/servlet-api/2.5/servlet-api-2.5.jar"/>
+        <pathelement location="C:/Users/asus/.m2/repository/javax/servlet/jsp/jsp-api/2.1/jsp-api-2.1.jar"/>
+        <pathelement location="C:/Users/asus/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar"/>
+    </path>
+    <path id="Apache Tomcat v8.5 [Apache Tomcat v8.5].libraryclasspath">
+        <pathelement location="C:/Program Files/Apache Software Foundation/Tomcat 8.5_Tomcat8.5/lib/annotations-api.jar"/>
+        <pathelement location="C:/Program Files/Apache Software Foundation/Tomcat 8.5_Tomcat8.5/lib/catalina-ant.jar"/>
+        <pathelement location="C:/Program Files/Apache Software Foundation/Tomcat 8.5_Tomcat8.5/lib/catalina-ha.jar"/>
+        <pathelement location="C:/Program Files/Apache Software Foundation/Tomcat 8.5_Tomcat8.5/lib/catalina-storeconfig.jar"/>
+        <pathelement location="C:/Program Files/Apache Software Foundation/Tomcat 8.5_Tomcat8.5/lib/catalina-tribes.jar"/>
+        <pathelement location="C:/Program Files/Apache Software Foundation/Tomcat 8.5_Tomcat8.5/lib/catalina.jar"/>
+        <pathelement location="C:/Program Files/Apache Software Foundation/Tomcat 8.5_Tomcat8.5/lib/commons-beanutils-1.9.3.jar"/>
+        <pathelement location="C:/Program Files/Apache Software Foundation/Tomcat 8.5_Tomcat8.5/lib/commons-collections-3.2.jar"/>
+        <pathelement location="C:/Program Files/Apache Software Foundation/Tomcat 8.5_Tomcat8.5/lib/commons-lang-2.3.jar"/>
+        <pathelement location="C:/Program Files/Apache Software Foundation/Tomcat 8.5_Tomcat8.5/lib/commons-logging-1.2.jar"/>
+        <pathelement location="C:/Program Files/Apache Software Foundation/Tomcat 8.5_Tomcat8.5/lib/ecj-4.6.3.jar"/>
+        <pathelement location="C:/Program Files/Apache Software Foundation/Tomcat 8.5_Tomcat8.5/lib/el-api.jar"/>
+        <pathelement location="C:/Program Files/Apache Software Foundation/Tomcat 8.5_Tomcat8.5/lib/ezmorph-1.0.6.jar"/>
+        <pathelement location="C:/Program Files/Apache Software Foundation/Tomcat 8.5_Tomcat8.5/lib/jasper-el.jar"/>
+        <pathelement location="C:/Program Files/Apache Software Foundation/Tomcat 8.5_Tomcat8.5/lib/jasper.jar"/>
+        <pathelement location="C:/Program Files/Apache Software Foundation/Tomcat 8.5_Tomcat8.5/lib/jaspic-api.jar"/>
+        <pathelement location="C:/Program Files/Apache Software Foundation/Tomcat 8.5_Tomcat8.5/lib/json-lib-2.4-jdk15.jar"/>
+        <pathelement location="C:/Program Files/Apache Software Foundation/Tomcat 8.5_Tomcat8.5/lib/jsp-api.jar"/>
+        <pathelement location="C:/Program Files/Apache Software Foundation/Tomcat 8.5_Tomcat8.5/lib/servlet-api.jar"/>
+        <pathelement location="C:/Program Files/Apache Software Foundation/Tomcat 8.5_Tomcat8.5/lib/tomcat-api.jar"/>
+        <pathelement location="C:/Program Files/Apache Software Foundation/Tomcat 8.5_Tomcat8.5/lib/tomcat-coyote.jar"/>
+        <pathelement location="C:/Program Files/Apache Software Foundation/Tomcat 8.5_Tomcat8.5/lib/tomcat-dbcp.jar"/>
+        <pathelement location="C:/Program Files/Apache Software Foundation/Tomcat 8.5_Tomcat8.5/lib/tomcat-i18n-es.jar"/>
+        <pathelement location="C:/Program Files/Apache Software Foundation/Tomcat 8.5_Tomcat8.5/lib/tomcat-i18n-fr.jar"/>
+        <pathelement location="C:/Program Files/Apache Software Foundation/Tomcat 8.5_Tomcat8.5/lib/tomcat-i18n-ja.jar"/>
+        <pathelement location="C:/Program Files/Apache Software Foundation/Tomcat 8.5_Tomcat8.5/lib/tomcat-jdbc.jar"/>
+        <pathelement location="C:/Program Files/Apache Software Foundation/Tomcat 8.5_Tomcat8.5/lib/tomcat-jni.jar"/>
+        <pathelement location="C:/Program Files/Apache Software Foundation/Tomcat 8.5_Tomcat8.5/lib/tomcat-util-scan.jar"/>
+        <pathelement location="C:/Program Files/Apache Software Foundation/Tomcat 8.5_Tomcat8.5/lib/tomcat-util.jar"/>
+        <pathelement location="C:/Program Files/Apache Software Foundation/Tomcat 8.5_Tomcat8.5/lib/tomcat-websocket.jar"/>
+        <pathelement location="C:/Program Files/Apache Software Foundation/Tomcat 8.5_Tomcat8.5/lib/websocket-api.jar"/>
+    </path>
+    <path id="JUnit 4.libraryclasspath">
+        <pathelement location="C:/Users/asus/.p2/pool/plugins/org.junit_4.12.0.v201504281640/junit.jar"/>
+        <pathelement location="C:/Users/asus/.p2/pool/plugins/org.hamcrest.core_1.3.0.v201303031735.jar"/>
+    </path>
+    <path id="MABM.classpath">
+        <pathelement location="target/classes"/>
+        <pathelement location="target/test-classes"/>
+        <path refid="Maven Dependencies.libraryclasspath"/>
+        <path refid="Apache Tomcat v8.5 [Apache Tomcat v8.5].libraryclasspath"/>
+        <path refid="JUnit 4.libraryclasspath"/>
+    </path>
+    <path id="run.TestMain (1).classpath">
+        <path refid="MABM.classpath"/>
+        <path refid="Maven Dependencies.libraryclasspath"/>
+    </path>
+    <target name="init">
+        <mkdir dir="target/classes"/>
+        <mkdir dir="target/test-classes"/>
+        <copy includeemptydirs="false" todir="target/classes">
+            <fileset dir="src/main/java">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+        <copy includeemptydirs="false" todir="target/classes">
+            <fileset dir="src/main/resources">
+                <exclude name="**/*.java"/>
+                <exclude name="**"/>
+            </fileset>
+        </copy>
+        <copy includeemptydirs="false" todir="target/test-classes">
+            <fileset dir="src/test/java">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="target/classes"/>
+        <delete dir="target/test-classes"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="target/classes" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src/main/java"/>
+            <src path="src/main/resources"/>
+            <exclude name="**"/>
+            <classpath refid="MABM.classpath"/>
+        </javac>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="target/test-classes" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src/test/java"/>
+            <classpath refid="MABM.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+    <target name="TestMain (1)">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="com.maternalBabyManage.test.TestMain" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.TestMain (1).classpath"/>
+        </junit>
+    </target>
+    <target name="junitreport">
+        <junitreport todir="${junit.output.dir}">
+            <fileset dir="${junit.output.dir}">
+                <include name="TEST-*.xml"/>
+            </fileset>
+            <report format="frames" todir="${junit.output.dir}"/>
+        </junitreport>
+    </target>
+</project>
